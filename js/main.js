@@ -1,4 +1,4 @@
-var strokeColor = '#333';
+var strokeColor;
 
 var clear = function()
 {
@@ -15,11 +15,11 @@ var setColor = function(val)
 };
 
 var setColorBlack = function(){
-    storkeColor = 'rgba(30,30,30,0.6)';
+    strokeColor = "rgba(30,30,30,0.6)";
 };
 
 var setColorRed = function(){
-    storkeColor = 'rgba(200,0,0,0.6)';
+    strokeColor = "rgba(200,0,0,0.6)";
 }
 
 
@@ -31,9 +31,6 @@ var draw1 = function(){
     ctx.beginPath();
     ctx.strokeStyle = 'red';
     ctx.strokeRect(20,20,80,40);
-    
-    
-    console.debug(ctx);
 };
 
 
@@ -95,7 +92,7 @@ function on_mousemove(e) {
     var ctx = canvas.getContext("2d");
 
     //ctx.strokeStyle = "rgba(200,0,0,0.6)";
-    ctx.storkeStyle = strokeColor; 
+    ctx.strokeStyle = strokeColor; 
     ctx.lineWidth = 4.0;
     ctx.lineJoin = "round";
     ctx.beginPath();
@@ -116,12 +113,9 @@ function on_mouseup(e) {
 
 function init() {
     var ie = document.getElementById("ie");
-    strokeColor = '#333';
-    
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
-    
-
+		strokeColor = '#333';
 
     //画面サイズへ拡大。
     canvas.setAttribute("height", window.innerHeight + "px");
